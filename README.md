@@ -1,5 +1,7 @@
 # PlaceholderImage
 
+
+
 Use this module in templates to generate placeholder images. It doesn't create a physical image but a base64 data uri string to use as the src of image tag. You can get the base64 code or the complete img tag for convenience.
 
 Example chained call:
@@ -26,3 +28,7 @@ $base64 = PlaceholderImage::image(150,100);
 $base64 = Placeholder::image(150, 100, 'FF0000', 'FFFFFF', 'Custom text');
 $imgTag = Placeholder::imagetag(150, 100, 'FF0000', 'FFFFFF', 'Custom text');
 ```
+
+## Requirements:
+
+- GD PHP lib installed in your server.

@@ -2,6 +2,9 @@
 /**
  * Placeholder helper.
  *
+ * Generates image placeholders with PHP and their GD library for creating websites
+ * and mockups without using real images but with a perfect fit size
+ *
  * @author     Patrick van Marsbergen
  * @copyright  (c) 2012 Mimbee All Rights Reserved
  * @license    http://mimbee.nl/bsd.html
