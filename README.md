@@ -25,8 +25,8 @@ Or static calls for convenience:
 
 ```
 $base64 = PlaceholderImage::image(150,100);
-$base64 = Placeholder::image(150, 100, 'FF0000', 'FFFFFF', 'Custom text');
-$imgTag = Placeholder::imagetag(150, 100, 'FF0000', 'FFFFFF', 'Custom text');
+$base64 = PlaceholderImage::image(150, 100, 'FF0000', 'FFFFFF', 'Custom text');
+$imgTag = PlaceholderImage::imagetag(150, 100, 'FF0000', 'FFFFFF', 'Custom text');
 ```
 
 ## Requirements:
