@@ -54,7 +54,7 @@ class PlaceholderImage extends WireData implements Module {
         return array(
             'title' => "Placeholder Images",
             'summary' => 'Generate placeholder images. Generates base64 data uri string.',
-            'version' => 1,
+            'version' => 2,
             'href' => '',
             'autoload' => false,
             'singular' => false
