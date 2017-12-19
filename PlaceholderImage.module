@@ -45,8 +45,8 @@ class PlaceholderImage extends WireData implements Module {
     protected $_text             = NULL;
     protected $_width            = 150;
     protected $_height           = NULL;
-    protected $_background_color = 'ff9f24';
-    protected $_text_color       = 'ffffff';
+    protected $_background_color = 'ff9f24'; // Orange
+    protected $_text_color       = 'ffffff'; // White
 
 
 
@@ -148,21 +148,20 @@ class PlaceholderImage extends WireData implements Module {
             $this->_text = $this->_width . ' x ' . $this->_height;
 
         $text_hex = str_split($this->_text_color, 2);
-        $bg_hex   = str_split($this->_background_color, 2);
-
+        $back_hex   = str_split($this->_background_color, 2);
         $image = imagecreatetruecolor($this->_width, $this->_height);
-        $text_color = imagecolorallocate($image, '0x' . $text_hex[0], '0x' . $text_hex[1], '0x' . $text_hex[2]);
-        $bg_color = imagecolorallocate($image, '0x' . $bg_hex[0], '0x' . $bg_hex[1], '0x' . $bg_hex[2]);
+        $text_color = imagecolorallocate($image, hexdec($text_hex[0]), hexdec($text_hex[1]), hexdec($text_hex[2]));
+        $bg_color   = imagecolorallocate($image, hexdec($back_hex[0]), hexdec($back_hex[1]), hexdec($back_hex[2]));
         imagefilledrectangle($image, 0, 0, $this->_width, $this->_height, $bg_color);
 
         $text_width = imagefontwidth(5) * strlen($this->_text);
-        $center = ceil($this->_width / 2);
-        $x = $center - (ceil($text_width/2));
+        $xcenter = ceil($this->_width / 2);
+        $x = $xcenter - (ceil($text_width/2));
 
-        $center = ceil($this->_height / 2);
-        $y = $center - 6;
+        $ycenter = ceil($this->_height / 2);
+        $y = $ycenter - 10;
 
-        imagestring($image, 5, $x, $y, $this->_text, $text_color);
+        imagestring($image, 4, $x, $y, $this->_text, $text_color);
 
         ob_start();
         imagepng($image);
